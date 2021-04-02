@@ -1,7 +1,7 @@
 
 
 addEventListener("fetch", (event) => {
-  let url = new URL(event.request.url
+  let url = new URL(event.request.url)
   console.log("URL", url)
   console.log("PATH", url.path)
   console.log("HASH", url.hash)
