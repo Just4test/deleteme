@@ -1,6 +1,10 @@
-function handleRequest(request) {
-  console.log(request)
-  return new Response("Hello World!", {
-    headers: { "content-type": "text/plain" },
-  });
-}
+
+
+addEventListener("fetch", (event) => {
+  console.log(event.request)
+  event.respondWith(new Response('111111111111', {
+      headers: {
+        "content-type": "application/json; charset=UTF-8",
+      },
+   }))
+});
