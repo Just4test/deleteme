@@ -3,7 +3,7 @@ import { parse } from "https://deno.land/std/encoding/yaml.ts";
 
 function modify(url: URL):string
 {
-  let sourceURL = (url.pathname+fetchURL.search).slice(1)
+  let sourceURL = (url.pathname + url.search).slice(1)
   console.log('SourceURL', sourceURL)
   let source = (await (await fetch(sourceURL, {headers:{'User-Agent':'Surge'}})).text()).split('\n')
   
