@@ -5,7 +5,7 @@ function modify(url: URL):string
 {
   let source = (await (await fetch((url.pathname+fetchURL.search).slice(1), {headers:{'User-Agent':'Surge'}})).text()).split('\n')
   
-  let result: string[] = ['#!MANAGED-CONFIG '+url+' interval=3600 strict=true'];
+  let result: string[] = ['#!MANAGED-CONFIG '+source+' interval=3600 strict=true'];
   let areas: {[key:string]: string[]} = {};
   let area = '';
   areas[area] = []
