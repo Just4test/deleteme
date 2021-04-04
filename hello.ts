@@ -3,7 +3,9 @@ import { parse } from "https://deno.land/std/encoding/yaml.ts";
 
 function modify(url: URL):string
 {
-  let source = (await (await fetch((url.pathname+fetchURL.search).slice(1), {headers:{'User-Agent':'Surge'}})).text()).split('\n')
+  let sourceURL = (url.pathname+fetchURL.search).slice(1)
+  console.log('SourceURL', sourceURL)
+  let source = (await (await fetch(sourceURL, {headers:{'User-Agent':'Surge'}})).text()).split('\n')
   
   let result: string[] = ['#!MANAGED-CONFIG '+source+' interval=3600 strict=true'];
   let areas: {[key:string]: string[]} = {};
