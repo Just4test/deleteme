@@ -1,6 +1,9 @@
 import { readLines } from "https://deno.land/std/io/mod.ts";
 import { parse } from "https://deno.land/std/encoding/yaml.ts";
 
+
+
+
 async function modify(url: URL):Promise<string>
 {
   let sourceURL = (url.pathname + url.search).slice(1)
